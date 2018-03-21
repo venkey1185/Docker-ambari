@@ -5,6 +5,10 @@ MAINTAINER Hortonworks
 ADD ambari.repo /etc/yum.repos.d/
 ADD hdp.repo /etc/yum.repos.d/
 
+# companion file
+wget http://public-repo-1.hortonworks.com/HDP/tools/2.6.0.3/hdp_manual_install_rpm_helper_files-2.6.0.3.8.tar.gz
+tar zxvf hdp_manual_install_rpm_helper_files-2.6.0.3.8.tar.gz
+
 # initscripts (service wrapper for servicectl) is need othewise the Ambari is unable to start postgresql
 RUN yum install -y ambari-server && yum clean all
 

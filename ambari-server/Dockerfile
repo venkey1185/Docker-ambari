@@ -3,6 +3,7 @@ MAINTAINER Hortonworks
 
 # add ambari repo
 ADD ambari.repo /etc/yum.repos.d/
+ADD hdp.repo /etc/yum.repos.d/
 
 # initscripts (service wrapper for servicectl) is need othewise the Ambari is unable to start postgresql
 RUN yum install -y ambari-server && yum clean all
